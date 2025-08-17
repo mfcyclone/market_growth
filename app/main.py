@@ -1,4 +1,6 @@
 import os
+from dotenv import load_dotenv
+load_dotenv()
 from fastapi import FastAPI, Query
 from pydantic import BaseModel
 from app.agents.triage_agent import run_triage
