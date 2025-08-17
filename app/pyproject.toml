@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "triage-trends"
+version = "0.1.0"
+description = "Triage & trend-research agents (FastAPI + OpenAI Agents SDK)"
+authors = ["You <you@example.com>"]
+readme = "README.md"
+packages = [{ include = "app" }]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = "^0.115.0"
+uvicorn = { extras = ["standard"], version = "^0.30.0" }
+pydantic = "^2.8.2"
+httpx = "^0.27.2"
+python-dotenv = "^1.0.1"
+openai = "^1.50.0"        # includes Responses API + Agents SDK client
+# If you prefer external search (Bing) instead of OpenAI web tool:
+# azure-cognitiveservices-search-websearch = "*"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.2"
+
+[tool.poetry.scripts]
+serve = "app.main:run"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
